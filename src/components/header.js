@@ -37,7 +37,8 @@ const useStyles = makeStyles(theme => ({
         },
     },
     appBar: {
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(255, 255, 255, 0)',
+        boxShadow: 'none',
         color: 'black',
     },
     menuButton: {
@@ -60,8 +61,9 @@ const useStyles = makeStyles(theme => ({
         padding: theme.spacing(3),
     },
     logo: {
-        fontSize: '24px',
+        fontSize: '3em',
         fontFamily: 'Pacifico',
+        fontWeight: '200',
     },
 
     link: {
@@ -88,6 +90,17 @@ const useStyles = makeStyles(theme => ({
     },
     lastNavItem: {
         marginTop: '24px',
+    },
+    container: {
+        '&::before': {
+            margin: '1px auto 1px 1px',
+            content: "''",
+            visibility: 'hidden',
+            padding: '27px',
+        },
+    },
+    logoContainer: {
+        textAlign: 'center',
     }
 }));
 
@@ -106,13 +119,15 @@ function Top(props) {
             <CssBaseline />
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar>
-                    <Grid container alignItems="center">
-                        <Grid item>
-                            <Typography variant="h6" className={classes.logo} noWrap>
-                                Vashon Motorworks
-                            </Typography>
+                    <Grid className={classes.container} container justify="center" alignItems="center" direction="row">
+                        <Grid item className={classes.logoContainer}>
+                            <Hidden mdUp>
+                                <Typography variant="h6" className={classes.logo} noWrap>
+                                    Vashon <br /> Motorworks
+                                </Typography>
+                            </Hidden>
                         </Grid>
-                        <Grid item style={{marginLeft: 'auto'}} order={2}>
+                        <Grid item style={{marginLeft: 'auto'}}>
                             <IconButton
                                 color="inherit"
                                 aria-label="open drawer"
@@ -124,7 +139,7 @@ function Top(props) {
                             </IconButton>
                             <Hidden mdDown implementation="css">
                                 <nav>
-                                    <Grid container spacing={4} alignItems="center">
+                                    {/*<Grid container spacing={4} alignItems="center">
                                         <Grid item>
                                             <Link
                                                 variant="body2"
@@ -153,9 +168,10 @@ function Top(props) {
                                             </Link>
                                         </Grid>
                                         <Grid item className={classes.navButtonGroup}>
-                                            <Button variant="contained" className={classes.button}>Make Appointment</Button>
+                  <a href="https://app.acuityscheduling.com/schedule.php?owner=18602916" target="_blank" className={classNames(classes.button, "acuity-embed-button")}>Make Appointment</a><script src="https://embed.acuityscheduling.com/embed/bar/18602916.js" async></script>
+
                                         </Grid>
-                                    </Grid>
+                                    </Grid>*/}
                                 </nav>
                             </Hidden>
                         </Grid>
@@ -171,13 +187,12 @@ function Top(props) {
                             paper: classes.drawerPaper,
                         }}
                         onClose={() => {
-                            console.log('here');
                             setMobileOpen(false);
                         }}
                         open={mobileOpen}
                     >
                         <List className={classes.list}>
-                            <ListItem button classes={{root: classes.drawerRoot }}>
+                            {/*<ListItem button classes={{root: classes.drawerRoot }}>
                                 <ListItemText primary="Navigation Link 1" />
                             </ListItem>
                             <ListItem button classes={{root: classes.drawerRoot }}>
@@ -185,7 +200,7 @@ function Top(props) {
                             </ListItem>
                             <ListItem button classes={{root: classes.drawerRoot }}>
                                 <ListItemText primary="Navigation Link 3" />
-                            </ListItem>
+                            </ListItem>*/}
                             <ListItem button className={classNames(classes.button, classes.lastNavItem)} classes={{root: classes.drawerRoot}}>
                                 <ListItemText primary="Make Appointment" />
                             </ListItem>
