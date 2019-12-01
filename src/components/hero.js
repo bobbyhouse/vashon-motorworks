@@ -4,38 +4,30 @@ import classNames from 'classnames';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
+import Hidden from '@material-ui/core/Hidden';
 
 const useStyles = makeStyles(theme => ({
-    pattern: {
-        backgroundColor: '#FAFAFA',
-        //        backgroundImage: 'linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black)',
-        backgroundImage: 'linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black), linear-gradient(45deg, black 25%, transparent 25%, transparent 75%, black 75%, black)',
-
-        backgroundSize: '60px 60px',
-        backgroundPosition: '0 0, 30px 30px',
-        position: 'relative',
-    },
-
     root: {
         minHeight: '250px',
     },
 
     item: {
         padding: '20px',
+        textAlign: 'center',
     },
 
     mainText: {
-        fontFamily: 'Work Sans',
+        fontFamily: 'Pacifico',
         fontSize: '1.55rem',
-        fontWeight: 'bolder',
+        fontWeight: '200',
         [theme.breakpoints.up('sm')]: {
-            fontSize: '1.8rem',
+            fontSize: '3rem',
         },
         [theme.breakpoints.up('md')]: {
-            fontSize: '1.8rem',
+            fontSize: '3rem',
         },
         [theme.breakpoints.up('lg')]: {
-            fontSize: '1.8rem',
+            fontSize: '3rem',
         },
     },
 
@@ -102,6 +94,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     captionContainer: {
+        textAlign: 'center',
         marginTop: '1.5rem',
     }
 }));
@@ -110,23 +103,22 @@ export function Hero(props) {
     const classes = useStyles();
     return (
             <Grid
-                className={classNames(classes.root, classes.pattern)}
+                className={classNames(classes.root)}
                 container
                 direction="row"
                 justify="center"
                 alignItems="center"
             >
                 <Grid item className={classes.item}>
-                        <Paper className={classes.textContainer}>
-                            <h1 className={classes.mainText}>Full Service Mechanic</h1>
-                            <h2 className={classes.subText}>24/7 <div className={classes.separator} /> On-Site</h2>
-                            <h2 className={classes.subText}>Auto <div className={classes.separator} /> Marine</h2>
-                            <div className={classes.captionContainer}>
-                                <p className={classes.captionText}>Idependently Owned and Operated</p>
-                                <p className={classes.captionText}>Vashon Island, WA</p>
-                                <p className={classes.captionText}>est. 2018</p>
-                            </div>
-                        </Paper>
+                    <Hidden smDown>
+                        <h1 className={classes.mainText}>Vashon <br /> Motorworks</h1>
+                    </Hidden>
+                    <h2 className={classes.subText}>24/7 x On-Site x Auto x Marine</h2>
+                    <div className={classes.captionContainer}>
+                        <p className={classes.captionText}>Idependently Owned and Operated</p>
+                        <p className={classes.captionText}>Vashon Island, WA</p>
+                        <p className={classes.captionText}>est. 2018</p>
+                    </div>
                 </Grid>
             </Grid>
     );

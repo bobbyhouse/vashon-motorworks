@@ -68,7 +68,9 @@ function SEO({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+        <script src="https://embed.acuityscheduling.com/embed/bar/18602916.js" async></script>
+    </Helmet>
   )
 }
 

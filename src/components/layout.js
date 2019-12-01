@@ -10,8 +10,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import { makeStyles } from '@material-ui/core/styles';
 
+import Hidden from '@material-ui/core/Hidden';
 
 import Header from "./header"
+import SEO from "./seo"
 import "./layout.css"
 
 const useStyles = makeStyles(theme => ({
@@ -33,8 +35,13 @@ const Layout = ({ children }) => {
 
   return (
       <>
+          <SEO />
           <Header siteTitle={data.site.siteMetadata.title} />
+
           <div className={classes.offset} />
+          <Hidden mdUp>
+              <div className={classes.offset} />
+          </Hidden>
           <main>{children}</main>
       </>
   )
