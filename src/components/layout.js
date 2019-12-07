@@ -37,11 +37,6 @@ const Layout = ({ children }) => {
       <>
           <SEO />
           <Header siteTitle={data.site.siteMetadata.title} />
-
-          <div className={classes.offset} />
-          <Hidden mdUp>
-              <div className={classes.offset} />
-          </Hidden>
           <main>{children}</main>
       </>
   )

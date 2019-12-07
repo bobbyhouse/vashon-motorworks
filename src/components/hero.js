@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 
     mainText: {
         fontFamily: 'Pacifico',
-        fontSize: '1.55rem',
+        fontSize: '3rem',
         fontWeight: '200',
         [theme.breakpoints.up('sm')]: {
             fontSize: '3rem',
@@ -110,9 +110,7 @@ export function Hero(props) {
                 alignItems="center"
             >
                 <Grid item className={classes.item}>
-                    <Hidden smDown>
-                        <h1 className={classes.mainText}>Vashon <br /> Motorworks</h1>
-                    </Hidden>
+                    <h1 className={classes.mainText}>Vashon <br /> Motorworks</h1>
                     <h2 className={classes.subText}>24/7 x On-Site x Auto x Marine</h2>
                     <div className={classes.captionContainer}>
                         <p className={classes.captionText}>Idependently Owned and Operated</p>
