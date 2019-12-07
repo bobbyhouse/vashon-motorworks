@@ -41,9 +41,6 @@ function IndexPage() {
               <Grid item>
                   <a href="https://app.acuityscheduling.com/schedule.php?owner=18602916" target="_blank" className={classNames(classes.button, "acuity-embed-button")}>Make Appointment</a><script src="https://embed.acuityscheduling.com/embed/bar/18602916.js" async></script>
               </Grid>
-              {/*<Grid item>
-                <Button variant="contained" color="primary" className={classes.button}>Dispatch Now</Button>
-              </Grid>*/}
           </Grid>
         </Layout>
     );
